@@ -1,0 +1,298 @@
+*{box-sizing:border-box;margin:0;padding:0}
+:root{--ink:#171714;--cream:#f4f0e8;--gold:#c8a66a;--muted:#a9a49a}
+html{scroll-behavior:smooth;scroll-padding-top:85px}
+body{font-family:"DM Sans",sans-serif;background:var(--cream);color:var(--ink)}
+a{color:inherit;text-decoration:none}
+.site-header{height:82px;padding:0 7%;display:flex;align-items:center;justify-content:space-between;background:#171714;color:#fff;position:sticky;top:0;z-index:20}
+.brand{display:flex;align-items:center;gap:12px;font-size:14px;letter-spacing:2.4px;font-weight:700}
+.brand i{color:var(--gold);font-family:"Playfair Display",serif}
+.brand-mark{width:34px;height:34px;border:1px solid var(--gold);color:var(--gold);display:grid;place-items:center;font:24px "Playfair Display",serif}
+.nav{display:flex;align-items:center;gap:30px;font-size:11px;letter-spacing:1.1px;text-transform:uppercase}
+.nav a{transition:color .2s}.nav a:hover,.text-link:hover{color:var(--gold)}
+.nav-book{border:1px solid #766344;padding:13px 17px;color:var(--gold)}
+.nav-book span,.button span{margin-left:13px}
+.menu-toggle{display:none;background:none;border:0;color:white;font-size:25px}
+.hero{height:min(760px,calc(100vh - 82px));min-height:590px;position:relative;background:url("https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=2200&q=90") center 55%/cover;display:flex;align-items:center;color:white}
+.hero-shade,.quote-overlay{position:absolute;inset:0;background:linear-gradient(90deg,rgba(12,12,10,.88),rgba(12,12,10,.52) 55%,rgba(12,12,10,.13))}
+.hero-content{position:relative;margin-left:12%;max-width:650px;padding:70px 0}
+.eyebrow{font-size:10px;letter-spacing:3px;color:var(--gold);font-weight:700;margin-bottom:25px}
+.eyebrow span{display:inline-block;width:25px;height:1px;background:var(--gold);vertical-align:middle;margin:0 10px}
+h1,h2{font-family:"Playfair Display",serif;font-weight:500;line-height:1.08}
+h1{font-size:clamp(54px,7vw,94px);letter-spacing:-2px}
+h1 em,h2 em{color:var(--gold);font-weight:500}
+.hero-copy{max-width:420px;color:#ddd8cf;font-size:14px;line-height:1.9;margin:25px 0 32px}
+.hero-actions{display:flex;align-items:center;gap:30px}
+.button{display:inline-flex;align-items:center;justify-content:center;padding:17px 23px;font-size:10px;letter-spacing:1.3px;text-transform:uppercase;font-weight:700;transition:.25s}
+.button-gold{background:var(--gold);color:#171714;border:1px solid var(--gold)}
+.button-gold:hover{background:#dfc28f}
+.text-link{font-size:11px;letter-spacing:1px;text-transform:uppercase}
+.hero-note{position:absolute;right:7%;bottom:55px;display:flex;align-items:center;gap:15px;font-size:9px;letter-spacing:2px;color:#e2ded5}
+.note-line{width:65px;height:1px;background:var(--gold)}
+.scroll-cue{position:absolute;left:7%;bottom:55px;font-size:9px;letter-spacing:2px;color:#ddd}
+.scroll-cue span{color:var(--gold);margin-left:10px}
+.section{padding:115px 10%}
+.intro{display:grid;grid-template-columns:1fr 1fr;gap:10%;align-items:center}
+.intro-image{position:relative}
+.intro-image img{width:100%;height:510px;object-fit:cover;display:block}
+.image-stamp{position:absolute;right:-25px;bottom:28px;width:90px;height:90px;background:var(--gold);display:flex;flex-direction:column;align-items:center;justify-content:center;color:var(--ink)}
+.image-stamp strong{font-size:10px;letter-spacing:2px}.image-stamp span{font:25px "Playfair Display",serif}
+.dark{color:#8b7048}
+h2{font-size:clamp(38px,4.5vw,60px);letter-spacing:-1px}
+.intro-copy .body-copy{font-size:13px;line-height:2;color:#716d64;margin-top:22px;max-width:440px}
+.under-link{display:inline-block;margin-top:32px;font-size:10px;letter-spacing:2px;font-weight:700;border-bottom:1px solid var(--gold);padding-bottom:10px}
+.under-link span{color:#9b7945;margin-left:15px}
+.menu-section{background:#e9e3d8}
+.section-heading{display:flex;justify-content:space-between;align-items:end;gap:30px;margin-bottom:35px}
+.section-heading .eyebrow{margin-bottom:18px}
+.section-heading>p{font-size:12px;line-height:1.9;color:#777168}
+.menu-tabs{display:flex;justify-content:center;gap:12px;margin-bottom:45px;flex-wrap:wrap}
+.menu-tab-btn{background:transparent;border:1px solid #c4b69c;color:#171714;padding:12px 26px;font-family:inherit;font-size:11px;letter-spacing:1.8px;text-transform:uppercase;font-weight:700;cursor:pointer;transition:all .25s ease}
+.menu-tab-btn:hover,.menu-tab-btn.active{background:var(--ink);color:var(--gold);border-color:var(--ink)}
+.menu-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:25px}
+.dish-card{background:#f8f5ef;position:relative;overflow:hidden;transition:opacity .3s ease,transform .3s ease}
+.dish-card.hidden{display:none}
+.dish-badge{position:absolute;top:14px;left:14px;background:rgba(23,23,20,0.85);backdrop-filter:blur(4px);color:var(--gold);font-size:9px;letter-spacing:1.5px;text-transform:uppercase;padding:5px 11px;font-weight:700;border:1px solid rgba(200,166,106,0.35);z-index:2}
+.dish-card img{width:100%;height:260px;object-fit:cover;display:block;transition:transform .5s}
+.dish-card:hover img{transform:scale(1.04)}
+.dish-info{padding:22px 20px 25px;display:flex;justify-content:space-between;gap:12px}
+.dish-info h3{font:20px "Playfair Display",serif;margin-bottom:8px}
+.dish-info p{font-size:10px;line-height:1.7;color:#817b70;max-width:210px}
+.dish-info strong{font-size:12px;color:#987744;white-space:nowrap}
+.button-outline{border:1px solid #a58b63;color:#5c4930;margin-top:42px}
+.button-outline:hover{background:var(--ink);color:white;border-color:var(--ink)}
+.quote-banner{height:440px;position:relative;background:url("https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=2000&q=85") center/cover;display:grid;place-items:center;text-align:center;color:white}
+.quote-overlay{background:rgba(15,14,12,.65)}
+.quote-content{position:relative}.quote-content h2{font-size:clamp(42px,5vw,68px)}
+.quote-content>p:last-child{font-size:12px;color:#ddd;margin-top:22px;letter-spacing:1px}
+.gallery{padding-bottom:120px}
+.gallery-grid{display:grid;grid-template-columns:1.2fr 1fr 1fr;gap:18px}
+.gallery-grid img{width:100%;height:280px;object-fit:cover}
+.reservation{background:#1b1b18;color:#fff;display:grid;grid-template-columns:1fr 1fr;gap:12%;align-items:center}
+.reservation-copy>p:not(.eyebrow){font-size:13px;color:#b9b5ac;line-height:1.9;max-width:390px;margin-top:24px}
+.reservation-detail{display:flex;gap:15px;align-items:center;margin-top:38px}.reservation-detail>span{color:var(--gold);font-size:24px}
+.reservation-detail strong,.reservation-detail small{display:block}.reservation-detail strong{font:18px "Playfair Display",serif}.reservation-detail small{font-size:10px;color:#aaa;margin-top:5px}
+.booking-form{background:#f4f0e8;color:var(--ink);padding:38px}
+.booking-form h3{font:30px "Playfair Display",serif}.booking-form>p{font-size:11px;color:#817b70;margin:8px 0 25px}
+.booking-form label{display:block;font-size:10px;font-weight:700;letter-spacing:.5px;margin:15px 0 8px}
+.booking-form input,.booking-form select{width:100%;padding:13px 12px;border:1px solid #d8d0c3;background:#fff;font:12px "DM Sans",sans-serif;color:#333;outline:none}
+.booking-form input:focus,.booking-form select:focus{border-color:#a98754}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.submit-button{width:100%;margin-top:25px;cursor:pointer}
+.form-message{min-height:18px;margin:12px 0 0!important;color:#6d5939!important}
+
+/* Booking Confirmation Overlay */
+.booking-overlay{position:fixed;inset:0;z-index:12000;background:rgba(0,0,0,0.85);display:none;align-items:center;justify-content:center;padding:20px;backdrop-filter:blur(6px)}
+.booking-overlay.active{display:flex}
+.booking-confirm-card{background:linear-gradient(145deg,#1e1d1a,#2a2824);border:2px solid #a98754;border-radius:20px;max-width:500px;width:100%;padding:45px 35px;text-align:center;animation:receiptIn .5s ease;box-shadow:0 20px 60px rgba(0,0,0,0.6)}
+.booking-confirm-icon{font-size:64px;margin-bottom:15px}
+.booking-confirm-title{font-family:'Playfair Display',serif;font-size:28px;color:#fff;margin-bottom:8px}
+.booking-confirm-subtitle{color:#b5a88a;font-size:14px;margin-bottom:25px;line-height:1.6}
+.booking-confirm-details{background:rgba(169,135,84,0.1);border:1px solid rgba(169,135,84,0.3);border-radius:12px;padding:20px;margin-bottom:20px;text-align:left}
+.booking-confirm-details .bcd-row{display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px solid rgba(255,255,255,0.06);font-size:14px}
+.booking-confirm-details .bcd-row:last-child{border-bottom:none}
+.booking-confirm-details .bcd-label{color:#a98754;font-weight:600;text-transform:uppercase;font-size:11px;letter-spacing:.5px}
+.booking-confirm-details .bcd-value{color:#fff;font-weight:500}
+.booking-confirm-note{color:#b5a88a;font-size:13px;margin-bottom:25px;line-height:1.7;padding:12px;background:rgba(255,255,255,0.03);border-radius:8px}
+.booking-confirm-close{width:100%;padding:16px;font-size:16px;cursor:pointer}
+footer{background:#11110f;color:#fff;padding:65px 10% 22px}
+.footer-top{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:35px;padding-bottom:55px}
+.footer-brand{margin-bottom:20px}
+.footer-top p{font-size:11px;color:#aaa69d;line-height:2.1;margin-top:15px}
+.footer-top h4{font-size:10px;letter-spacing:2px;color:var(--gold);margin:9px 0 18px}
+.footer-top a:hover{color:var(--gold)}
+.footer-bottom{border-top:1px solid #333;padding-top:20px;display:flex;justify-content:space-between;color:#777;font-size:9px;letter-spacing:1px}
+.footer-bottom a{color:var(--gold)}
+
+/* --- Ordering System & Cart Styles --- */
+.nav-cart-btn{background:#23221e;border:1px solid var(--gold);color:var(--gold);display:inline-flex;align-items:center;gap:8px;padding:9px 15px;font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase;cursor:pointer;transition:all .25s ease}
+.nav-cart-btn:hover{background:var(--gold);color:#171714}
+.cart-badge-count{background:var(--gold);color:#171714;font-size:10px;padding:2px 7px;border-radius:12px;font-weight:800}
+.nav-cart-btn:hover .cart-badge-count{background:#171714;color:var(--gold)}
+
+.dining-mode-banner{background:#1d1c18;color:#fff;padding:32px 36px;border:1px solid rgba(200,166,106,0.25);margin-bottom:40px;display:flex;justify-content:space-between;align-items:center;gap:25px;flex-wrap:wrap}
+.dmb-copy{max-width:480px}
+.dmb-copy h3{font:24px "Playfair Display",serif;margin:4px 0 8px;color:#f4f0e8}
+.dmb-copy p{font-size:12px;line-height:1.7;color:#b7b2a7}
+.mode-toggle-group{display:flex;gap:14px;flex-wrap:wrap}
+.mode-toggle-btn{background:#272520;border:1px solid rgba(200,166,106,0.35);color:#ded9cd;padding:15px 18px;display:flex;align-items:center;gap:14px;cursor:pointer;transition:all .25s ease;text-align:left;position:relative;min-width:205px}
+.mode-toggle-btn:hover{border-color:var(--gold)}
+.mode-toggle-btn.active{background:#332d20;border-color:var(--gold);color:#fff;box-shadow:0 4px 18px rgba(200,166,106,0.18)}
+.mode-icon{font-size:24px}
+.mode-text-wrap strong{display:block;font-size:13px;letter-spacing:.8px;color:#fff}
+.mode-text-wrap small{display:block;font-size:10px;color:#a7a296;margin-top:2px}
+.mode-check{margin-left:auto;font-size:14px;color:var(--gold);opacity:0;transition:opacity .2s}
+.mode-toggle-btn.active .mode-check{opacity:1}
+
+.dish-card{display:flex;flex-direction:column}
+.dish-info{padding:20px 20px 22px;display:flex;flex-direction:column;justify-content:space-between;gap:16px;flex:1}
+.dish-action-row{display:flex;justify-content:space-between;align-items:center;padding-top:14px;border-top:1px solid #ebd0ad44}
+.dish-price{font-size:14px;color:#987744;font-weight:700}
+.add-cart-btn{background:transparent;border:1px solid var(--gold);color:var(--ink);padding:8px 16px;font-family:inherit;font-size:10px;letter-spacing:1.2px;text-transform:uppercase;font-weight:700;cursor:pointer;transition:all .2s ease}
+.add-cart-btn:hover{background:var(--gold);color:#171714}
+.add-cart-btn.added{background:#2a633c;border-color:#2a633c;color:#fff}
+
+.menu-cta-banner{margin-top:50px;padding:32px 20px;background:#dfd8cb;border:1px dashed #bba98e;text-align:center;display:flex;flex-direction:column;align-items:center;gap:16px}
+.menu-cta-banner p{font:20px "Playfair Display",serif;color:var(--ink)}
+.menu-cta-buttons{display:flex;gap:15px;flex-wrap:wrap;justify-content:center}
+
+.floating-cart-bar{position:fixed;bottom:24px;right:28px;z-index:99;box-shadow:0 10px 30px rgba(0,0,0,0.3);transition:transform .3s ease,opacity .3s ease}
+.floating-cart-btn{background:#171714;border:1px solid var(--gold);color:#fff;padding:14px 22px;display:flex;align-items:center;gap:20px;cursor:pointer;font-family:inherit;transition:transform .2s ease,background .2s ease}
+.floating-cart-btn:hover{background:#25241f;transform:translateY(-2px)}
+.fc-left{display:flex;align-items:center;gap:12px}
+.fc-icon{font-size:20px}
+.fc-title{display:block;font-size:12px;font-weight:700;letter-spacing:.8px}
+.fc-mode{display:block;font-size:10px;color:var(--gold);margin-top:2px}
+.fc-right{display:flex;align-items:center;gap:14px;border-left:1px solid #444;padding-left:16px}
+.fc-total{font-size:14px;font-weight:700;color:var(--gold)}
+.fc-arrow{font-size:10px;letter-spacing:1.2px;text-transform:uppercase;color:#e2ded5}
+
+.cart-overlay{position:fixed;inset:0;background:rgba(15,14,12,0.7);backdrop-filter:blur(4px);z-index:998;opacity:0;pointer-events:none;transition:opacity .3s ease}
+.cart-overlay.open{opacity:1;pointer-events:auto}
+.cart-drawer{position:fixed;top:0;right:0;bottom:0;width:min(480px,94vw);height:100vh;height:100dvh;background:#1a1a17;color:#f4f0e8;z-index:1000;transform:translateX(100%);transition:transform .35s cubic-bezier(0.16,1,0.3,1);display:flex;flex-direction:column;box-shadow:-10px 0 50px rgba(0,0,0,0.6);overflow:hidden}
+.cart-drawer.open{transform:translateX(0)}
+.cart-drawer-header{padding:18px 24px;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #2e2c26;flex-shrink:0}
+.cart-drawer-header h3{font:22px "Playfair Display",serif;color:#fff}
+.cart-subhead{font-size:11px;color:#a49f93;margin-top:4px}
+.cart-subhead strong{color:var(--gold)}
+.cart-close-btn{background:none;border:1px solid #444;color:#ddd;width:34px;height:34px;font-size:16px;cursor:pointer;display:grid;place-items:center;transition:all .2s}
+.cart-close-btn:hover{border-color:var(--gold);color:var(--gold)}
+
+.cart-drawer-body{flex:1;overflow-y:auto;display:flex;flex-direction:column}
+.drawer-section-heading{display:flex;justify-content:space-between;align-items:center;padding:12px 24px 8px;font-size:10px;letter-spacing:1.5px;text-transform:uppercase;color:var(--gold);font-weight:700;background:#151513;border-bottom:1px solid #25241f}
+.clear-cart-link-inline{background:none;border:none;color:#8c877b;font-size:10px;text-transform:uppercase;letter-spacing:.8px;cursor:pointer;transition:color .2s}
+.clear-cart-link-inline:hover{color:#e06060}
+
+.cart-mode-switch{display:flex;border-bottom:1px solid #2e2c26;background:#141412;flex-shrink:0}
+.cart-mode-tab{flex:1;padding:13px;background:transparent;border:none;color:#8c877b;font-family:inherit;font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase;cursor:pointer;transition:all .2s;border-bottom:2px solid transparent}
+.cart-mode-tab.active{color:var(--gold);border-bottom-color:var(--gold);background:#1d1c18}
+
+.order-details-box{padding:16px 24px;background:#1e1d19;border-bottom:1px solid #2e2c26;display:flex;flex-direction:column;gap:12px}
+.order-details-box .form-field label{display:block;font-size:10px;text-transform:uppercase;letter-spacing:.8px;font-weight:700;color:#c4beaf;margin-bottom:5px}
+.order-details-box input,.order-details-box select{width:100%;padding:10px 12px;background:#131311;border:1px solid #3d3a33;color:#eee;font:12px "DM Sans",sans-serif;outline:none}
+.order-details-box input:focus,.order-details-box select:focus{border-color:var(--gold)}
+
+.payment-method-box{padding:16px 24px;background:#171714;border-bottom:1px solid #2e2c26}
+.pay-box-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:10px}
+.pay-box-header label{font-size:10px;text-transform:uppercase;letter-spacing:.8px;font-weight:700;color:#c4beaf}
+.pay-active-label{font-size:10px;color:var(--gold);font-weight:700;letter-spacing:.5px}
+.payment-options-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.pay-option-btn{background:#131311;border:1px solid #3d3a33;color:#ded9cd;padding:12px 14px;display:flex;align-items:center;gap:10px;cursor:pointer;transition:all .2s ease;text-align:left}
+.pay-option-btn:hover{border-color:var(--gold)}
+.pay-option-btn.active{background:#2a251b;border-color:var(--gold);color:#fff}
+.pay-icon{font-size:20px}
+.pay-title-row{display:flex;align-items:center;gap:6px}
+.pay-tag-badge{background:#28a745;color:#fff;font-size:9px;font-weight:800;padding:1px 6px;border-radius:8px;letter-spacing:.4px}
+.pay-info strong{display:block;font-size:12px;color:#fff}
+.pay-info small{display:block;font-size:9px;color:#9b9588;margin-top:2px}
+.pay-check{margin-left:auto;font-size:12px;color:var(--gold);opacity:0;transition:opacity .2s}
+.pay-option-btn.active .pay-check{opacity:1}
+
+.bill-discount-row{background:rgba(40,167,69,0.12);padding:6px 10px;border-radius:4px;border:1px dashed #28a745;margin:4px 0}
+.disc-label{color:#4cd964!important;font-weight:600}
+.disc-val{color:#4cd964!important}
+
+.cart-items-container{padding:16px 24px;display:flex;flex-direction:column;gap:14px;background:#1a1a17;border-bottom:1px solid #25241f}
+.cart-empty-state{text-align:center;padding:35px 20px;color:#837f76}
+.empty-icon{font-size:36px;display:block;margin-bottom:12px;opacity:.7}
+.cart-empty-state h4{font:18px "Playfair Display",serif;color:#ddd;margin-bottom:6px}
+.cart-empty-state p{font-size:11px;line-height:1.7;max-width:280px;margin:0 auto}
+.quick-add-group{display:flex;flex-direction:column;gap:8px;margin-top:14px}
+.quick-chip-btn{background:#23221e;border:1px dashed var(--gold);color:var(--gold);padding:9px 12px;font-family:inherit;font-size:11px;font-weight:600;cursor:pointer;transition:all .2s;text-align:center}
+.quick-chip-btn:hover{background:var(--gold);color:#171714}
+.cart-item-row{display:flex;gap:12px;align-items:center;padding-bottom:12px;border-bottom:1px solid #282621}
+.cart-item-img{width:56px;height:56px;object-fit:cover;border:1px solid #3a3730;border-radius:4px}
+.cart-item-info{flex:1}
+.cart-item-title{font-size:13px;font-weight:600;color:#fff;margin-bottom:3px}
+.cart-item-unit{font-size:11px;color:var(--gold)}
+.cart-item-stepper{display:flex;align-items:center;gap:8px;margin-top:5px}
+.step-btn{width:22px;height:22px;background:#272520;border:1px solid #444;color:#fff;font-size:12px;cursor:pointer;display:grid;place-items:center;transition:background .15s}
+.step-btn:hover{background:var(--gold);color:#171714;border-color:var(--gold)}
+.step-qty{font-size:12px;font-weight:700;min-width:18px;text-align:center}
+.cart-item-side{text-align:right}
+.cart-item-line-total{display:block;font-size:13px;font-weight:700;color:#f4f0e8}
+.cart-item-del-btn{background:none;border:none;color:#8c877b;font-size:10px;cursor:pointer;margin-top:6px;padding:2px 4px;transition:color .2s}
+.cart-item-del-btn:hover{color:#e06060}
+
+.cart-drawer-footer{padding:16px 24px 20px;border-top:1px solid #332d20;background:#141412;flex-shrink:0;box-shadow:0 -6px 20px rgba(0,0,0,0.4);position:relative;z-index:10}
+.bill-breakdown{display:flex;flex-direction:column;gap:8px;margin-bottom:14px}
+.bill-row{display:flex;justify-content:space-between;font-size:12px;color:#a49f93}
+.bill-row small{color:var(--gold)}
+.bill-total{font-size:16px;color:#fff;font-weight:700;padding-top:8px;border-top:1px dashed #333}
+.bill-total strong{color:var(--gold)}
+.checkout-submit-btn{width:100%;cursor:pointer;padding:15px;font-size:11px;letter-spacing:1.2px;font-weight:700}
+
+.receipt-overlay{position:fixed;inset:0;background:rgba(10,9,8,0.88);backdrop-filter:blur(8px);z-index:9999;display:grid;place-items:center;padding:20px;opacity:0;pointer-events:none;transition:opacity .3s ease;overflow-y:auto}
+.receipt-overlay.open{opacity:1;pointer-events:auto}
+.receipt-card{background:#fbf9f5;color:#171714;width:min(520px,100%);max-height:90vh;overflow-y:auto;padding:34px 30px;position:relative;border:1px solid var(--gold);box-shadow:0 20px 60px rgba(0,0,0,0.6);transition:max-width .25s ease,padding .25s ease}
+.receipt-close-btn{position:absolute;top:18px;right:18px;background:none;border:1px solid #ccc;width:32px;height:32px;cursor:pointer;font-size:14px;color:#555}
+
+.order-confirmed-banner{background:#ebf7ee;border:1px solid #7bc68e;color:#185a2c;padding:16px 20px;border-radius:6px;display:flex;align-items:center;gap:14px;margin-bottom:20px;box-shadow:0 4px 14px rgba(40,167,69,0.12)}
+.ocb-icon{font-size:32px;display:grid;place-items:center;animation:pulseCheck 1.5s infinite ease-in-out}
+@keyframes pulseCheck{0%,100%{transform:scale(1)}50%{transform:scale(1.15)}}
+.ocb-body h3{font:700 15px "DM Sans",sans-serif;letter-spacing:.8px;margin-bottom:4px;color:#125225;text-transform:uppercase}
+.ocb-body p{font-size:11px;line-height:1.6;color:#286338;margin:0}
+
+.receipt-view-switch{display:flex;gap:8px;margin-bottom:20px;border-bottom:1px solid #e0dacd;padding-bottom:14px}
+.receipt-view-btn{flex:1;background:transparent;border:1px solid #c9c1b3;color:#555;padding:8px 10px;font-family:inherit;font-size:10px;font-weight:700;letter-spacing:1px;text-transform:uppercase;cursor:pointer;transition:all .2s}
+.receipt-view-btn.active{background:var(--ink);color:var(--gold);border-color:var(--ink)}
+
+/* Compact Dining Table Slip / Docket */
+.receipt-card.compact-view{max-width:380px;padding:22px 18px;background:#fff;border:1px dashed #888;font-family:monospace,sans-serif}
+.receipt-card.compact-view .receipt-header{padding-bottom:10px;border-bottom:1px dashed #999}
+.receipt-card.compact-view .receipt-brand span:not(.brand-mark){font-size:12px;letter-spacing:1.5px}
+.receipt-card.compact-view .brand-mark{width:26px;height:26px;font-size:16px}
+.receipt-card.compact-view .receipt-tagline,
+.receipt-card.compact-view .order-status-badge,
+.receipt-card.compact-view .receipt-footer-msg{display:none}
+.receipt-card.compact-view .receipt-meta{font-size:10px;grid-template-columns:1fr;gap:3px;padding:8px 0;line-height:1.4}
+.receipt-card.compact-view .receipt-items-list{padding:6px 0;gap:4px}
+.receipt-card.compact-view .r-item-row{font-size:11px}
+.receipt-card.compact-view .receipt-totals{gap:4px;padding:6px 0;font-size:11px}
+.receipt-card.compact-view .r-grand{font-size:13px;border-top:1px dashed #888}
+.receipt-card.compact-view .receipt-notes{margin:8px 0;padding:6px 10px;font-size:10px;border-left:2px solid #555}
+.receipt-header{text-align:center;padding-bottom:18px;border-bottom:2px dashed #cfc8be}
+.receipt-brand{justify-content:center;margin-bottom:6px}
+.receipt-tagline{font-size:9px;letter-spacing:2px;color:#8c8273;font-weight:700}
+.order-status-badge{display:inline-flex;align-items:center;gap:7px;background:#e7f5eb;color:#1f6b39;border:1px solid #b7e3c4;font-size:10px;letter-spacing:1px;text-transform:uppercase;font-weight:700;padding:5px 12px;margin-top:12px;border-radius:14px}
+.status-dot{width:7px;height:7px;background:#279e4f;border-radius:50%}
+.receipt-meta{padding:16px 0;display:grid;grid-template-columns:1fr 1fr;gap:10px;font-size:11px;color:#666}
+.receipt-meta strong{color:#171714}
+.receipt-divider{height:1px;border-bottom:1px dashed #cfc8be;margin:8px 0}
+.receipt-items-list{display:flex;flex-direction:column;gap:10px;padding:12px 0}
+.r-item-card{display:flex;align-items:center;gap:12px;padding:8px 10px;background:#f4f0e8;border:1px solid #e2dacd;border-radius:4px}
+.r-item-img{width:52px;height:52px;object-fit:cover;border-radius:4px;border:1px solid #cfc5b4;flex-shrink:0}
+.r-item-info{flex:1}
+.r-item-name{font-size:13px;font-weight:700;color:#171714;margin-bottom:2px}
+.r-item-sub{font-size:11px;color:#706b61}
+.r-item-qty-badge{background:var(--gold);color:#171714;padding:1px 6px;border-radius:8px;font-weight:800;font-size:10px}
+.r-item-price{font-size:13px;font-weight:700;color:#987744;white-space:nowrap}
+.receipt-card.compact-view .r-item-card{background:#fafafa;padding:6px 8px;gap:8px}
+.receipt-card.compact-view .r-item-img{width:40px;height:40px}
+.r-item-row{display:flex;justify-content:space-between;font-size:12px}
+.r-item-name{font-weight:600}
+.r-item-qty{color:#8c8273;margin-left:6px}
+.receipt-totals{display:flex;flex-direction:column;gap:6px;padding:10px 0;font-size:12px}
+.r-row{display:flex;justify-content:space-between;color:#555}
+.r-grand{font-size:15px;font-weight:700;color:#171714;padding-top:6px;border-top:1px solid #ddd}
+.r-grand strong{color:#987744}
+.receipt-notes{font-size:11px;background:#f1ede3;padding:10px 14px;margin:12px 0;border-left:3px solid var(--gold);color:#555}
+.receipt-footer-msg{text-align:center;font-size:11px;color:#777;margin:16px 0 20px;line-height:1.6}
+.receipt-actions{display:flex;gap:12px}
+.receipt-actions button{flex:1;padding:14px;font-size:10px;cursor:pointer}
+
+.toast-container{position:fixed;bottom:30px;left:30px;z-index:120;display:flex;flex-direction:column;gap:10px;pointer-events:none}
+.toast{background:#171714;color:#fff;border:1px solid var(--gold);padding:12px 20px;font-size:11px;letter-spacing:.6px;display:flex;align-items:center;gap:10px;box-shadow:0 8px 24px rgba(0,0,0,0.35);animation:toastIn .3s ease forwards;pointer-events:auto}
+.toast.fade-out{animation:toastOut .3s ease forwards}
+@keyframes toastIn{from{opacity:0;transform:translateY(15px)}to{opacity:1;transform:translateY(0)}}
+@keyframes toastOut{from{opacity:1;transform:translateY(0)}to{opacity:0;transform:translateY(10px)}}
+@media print{
+  html,body{background:#fff!important;color:#000!important;margin:0!important;padding:0!important}
+  .site-header,main,footer,.floating-cart-bar,.cart-drawer,.cart-overlay,.toast-container,.receipt-close-btn,.receipt-view-switch,.receipt-actions,.order-status-badge,.receipt-footer-msg{display:none!important}
+  .receipt-overlay{position:static!important;background:none!important;padding:0!important;display:block!important;opacity:1!important}
+  .receipt-card{border:1px dashed #333!important;box-shadow:none!important;width:100%!important;max-width:340px!important;margin:15px auto!important;padding:16px!important;background:#fff!important;color:#000!important;page-break-inside:avoid;font-family:monospace,sans-serif!important}
+  .receipt-meta strong,.r-grand strong{color:#000!important}
+  .receipt-divider{border-bottom:1px dashed #333!important}
+}
+
+@media(max-width:900px){.nav{gap:15px;font-size:9px}.section{padding:85px 7%}.intro{gap:7%}.dish-card img{height:210px}.dish-info{flex-direction:column}.reservation{gap:6%}.footer-top{grid-template-columns:1fr 1fr}}
+@media(max-width:650px){.site-header{height:70px;padding:0 6%}.menu-toggle{display:block}.nav{display:none;position:absolute;top:70px;left:0;right:0;background:#171714;padding:20px 7% 28px;flex-direction:column;align-items:stretch;gap:0}.nav.open{display:flex}.nav a{padding:13px 0;font-size:11px}.nav .nav-book{padding:13px;margin-top:8px;text-align:center}.nav .nav-cart-btn{padding:13px;margin-top:8px;justify-content:center}.hero{height:650px;min-height:0;background-position:60% center}.hero-content{margin:0 7%;padding:45px 0}.hero-content h1{font-size:57px}.hero-note{right:7%;bottom:28px}.scroll-cue{left:7%;bottom:28px}.intro{grid-template-columns:1fr;gap:55px}.intro-image img{height:390px}.intro-copy{padding-right:5%}.section-heading{display:block}.section-heading>p{margin-top:18px}.dining-mode-banner{padding:22px 18px}.mode-toggle-btn{min-width:0;width:100%}.menu-tabs{gap:8px;margin-bottom:30px}.menu-tab-btn{padding:9px 14px;font-size:10px}.menu-grid{grid-template-columns:1fr;gap:20px}.dish-card img{height:260px}.floating-cart-bar{left:15px;right:15px;bottom:15px}.floating-cart-btn{padding:12px 16px;gap:12px;justify-content:space-between;width:100%}.cart-drawer{width:100vw}.receipt-card{padding:28px 18px}.quote-banner{height:350px}.gallery-grid{grid-template-columns:1fr 1fr}.gallery-grid img{height:180px}.gallery-grid img:first-child{grid-column:span 2;height:230px}.reservation{grid-template-columns:1fr;gap:45px}.booking-form{padding:26px 20px}.form-row{grid-template-columns:1fr;gap:0}.footer-top{grid-template-columns:1fr 1fr;gap:30px}.footer-top>div:first-child{grid-column:span 2}footer{padding:55px 7% 20px}.footer-bottom{gap:15px;line-height:1.7}}
