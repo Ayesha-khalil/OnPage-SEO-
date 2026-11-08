@@ -1,0 +1,5 @@
+
+User-agent: *
+Allow: /
+
+Sitemap: https://seafood-restaurant-website.vercel.app/sitemap.xml
